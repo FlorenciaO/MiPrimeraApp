@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MiPrimeraApp</string>
+
+    <!-- Esto es un comentario dentro de un XML -->
+    <!-- Centralizar la utilización de textos  -->
+    <string name="ingresar_usuario">Ingrese usuario</string>
+    <string name="ingresar_contrasenia">Ingresar contraseña</string>
+    <string name="recordar_usuario">Recordar usuario</string>
+    <string name="crear_usuario">Crear Usuario</string>
+
+    <!-- Concatenación de resource con variable -->
+    <string name="bienvenido_usuario">Bienvenido %s</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="bienvenido">Bienvenido!</string>
+</resources>
