@@ -11,24 +11,28 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ingresar_usuario" />
+        android:text="Ingrese usuario" />
 
     <EditText
         android:id="@+id/etUsuario"
+        android:hint="Usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:ems="10" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="@string/ingresar_contrasenia" />
+        android:text="Ingrese contraseña" />
 
     <EditText
         android:id="@+id/etContraseña"
+        android:hint="Contraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -36,7 +40,7 @@
         android:id="@+id/checkBoxRecordar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/recordar_usuario" />
+        android:text="Recordar usuario" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,9 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:layout_weight="0.5"
-            android:backgroundTint="@color/btnCrearUsuarioColor"
-            android:text="@string/crear_usuario" />
+            android:layout_weight="0.5" />
 
         <Button
             android:id="@+id/btnIniciarSesion"
@@ -58,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:layout_weight="0.5"
-            android:text="@string/iniciar_sesion" />
+            android:text="Iniciar sesión" />
 
     </LinearLayout>
 </LinearLayout>
