@@ -61,4 +61,12 @@
             android:text="@string/iniciar_sesion" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnShowDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar Alerta"
+        android:visibility="gone"
+        tools:visibility="visible"/>
 </LinearLayout>

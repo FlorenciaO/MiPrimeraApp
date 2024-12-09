@@ -2,6 +2,7 @@ package com.example.miprimeraapp;
 
 import static com.example.miprimeraapp.HomeActivity.EXTRA_USUARIO;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etUsuario;
     private EditText etContrasenia;
     private Button btnIniciarSesion;
+    private Button btnShowDialog;
 
 
     /** region Ciclo de vida de una Activity */
@@ -79,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         etUsuario = findViewById(R.id.etUsuario);
         etContrasenia = findViewById(R.id.etContraseña);
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
+        btnShowDialog = findViewById(R.id.btnShowDialog);
 
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +97,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnShowDialog.setVisibility(View.VISIBLE);
+        btnShowDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, DialogActivity.class));
+            }
+        });
+
         obtenerColorRecurso();
     }
 
