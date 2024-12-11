@@ -1,19 +1,24 @@
 package com.example.miprimeraapp;
 
 import static com.example.miprimeraapp.HomeActivity.EXTRA_USUARIO;
+import static com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_LONG;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -90,7 +95,35 @@ public class MainActivity extends AppCompatActivity {
                 String usuario = etUsuario.getText().toString();
                 String contrasenia = etContrasenia.getText().toString();
                 if (usuario.isEmpty() || contrasenia.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Completar datos", Toast.LENGTH_SHORT).show();
+                    /*
+                    Esto es un ejemplo con Toast, limitación de solo cambiar el texto.
+                    Para cambiar de posición o configurarle una acción, se puede utilizar un [Snackbar]
+                     */
+                    // Toast.makeText(MainActivity.this, "Completar datos", Toast.LENGTH_SHORT).show();
+
+                    /*
+                    Esto es un ejemplo con Snackbar. Recibe una [View] para atacharse y mostrarse dentro,
+                    al final de la vista padre.
+                     */
+                    View container = findViewById(R.id.container);
+                    Snackbar snackbar = Snackbar.make(container, "Completar datos", LENGTH_LONG);
+                    snackbar.setAction("Acción", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Realizar acción
+                        }
+                    });
+
+                    /*
+                    Si se quiere re-ubicar, se puede cambiar el atributo Gravity del snackbar.
+                    No se puede especificar un punto específico, para eso se debe crear una vista custom
+                    */
+                    View view = snackbar.getView();
+                    FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) view.getLayoutParams();
+                    params.gravity =  Gravity.CENTER_HORIZONTAL | Gravity.TOP;
+                    view.setLayoutParams(params);
+
+                    snackbar.show();
                 } else {
                     navegacionAOtraActivity(usuario);
                     quitarActivityDePila();
